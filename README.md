@@ -6,6 +6,8 @@ Web: [Inove](http://inove.com.ar)
 # ¡Proyecto Blog! [Python]
 Este repositorio contiene todos los materiales e instrucciones para poder realizar el proyecto de blog de programador python.
 
+Este proyecto se acerca al tipo de trabajo y de desafios que tendrán en el curso de Python Django.
+
 Para este proyecto ya cuenta con toda la parte de frontend resuelta, su deber será crear el backend de esta aplicación.
 
 __NOTA__: Recomendamos haber realizado todos los ejercicios de pŕactica para poder realizar este proyecto, principalmente los de:
