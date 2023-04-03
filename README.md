@@ -62,12 +62,14 @@ Cuando el usuario acceda a esta ruta desde el explorador, este endpoint deberá 
 ## Endpoints del backend (APIs)
 Dentro del archivo __app.py__ deberá implementar los siguientes endpoints que responderán las peticiones GET / POST / etc:
 
-### Endpoint post (/post)
-Dentro de este endpoint deberá aceptar peticiones del tipo "GET" y del tipo "POST". Para cada petición deberá realizar:
+### Endpoint post (/posteos/<usuario>)
+Dentro de este endpoint deberá aceptar peticiones del tipo "GET" y del tipo "POST".
+Este endpoint recibe en la URL el nombre del usuario por parámetro. Deberá capturar el valor de "usuario" en la función del endpoint.
 
-### Endpoint post (/post) para peticiones GET
-Cuando este endpoint sea invocado por GET, el frontend le enviará por parámetros de la URL el username del usuario logeado en "request.args".
-- Deberá obtener el username de "request.args".
+Para cada petición deberá realizar:
+
+### Endpoint post (/posteos/<usuario>) para peticiones GET
+Cuando este endpoint sea invocado por GET, el frontend le enviará en la URL el username del usuario logeado, luego:
 - Deberá filtrar los Posts por ese username y devolver los últimos (usar order_by descendente) tres posts realizados (limit = 3)
 - Cada post lo deberá guardar en una lista de posts.
 - Al finalizar deberá retornar los posts contenido en la lista como:
@@ -75,9 +77,10 @@ Cuando este endpoint sea invocado por GET, el frontend le enviará por parámetr
 return jsonify({"posts": posts})
 ```
 
-### Endpoint post (/post) para peticiones POST
-Cuando este endpoint sea invocado por POST, el frontend le enviará los datos del posteo escrito (username, titulo, texto) en los parámetros de un formulario en "request.form".
-- Deberá obtener el username, titulo y texto de "request.form".
+### Endpoint post (/posteos/<usuario>) para peticiones POST
+Cuando este endpoint sea invocado por POST, el frontend le enviará los datos del posteo escrito (titulo, texto) en los parámetros de un formulario en "request.form".
+- Deberá obtener el usuario de la URL.
+- Deberá obtener el titulo y texto de "request.form".
 - Con esos datos deberá crear un nuevo posteo en la base de datos.
 - Deberá almacenar el posteo creado en una variable llamada "post".
 - Al finalizar deberá retornar que la petición se completó con éxito indicando los datos del posteo creado:
