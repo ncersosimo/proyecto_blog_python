@@ -34,7 +34,7 @@ const url = document.querySelector("#publicar").getAttribute("path");
 
 fetch(`${url}/${username}`)
     .then(response => response.json())
-    .then(data => data.posts)
+    .then(data => data)
     .then(posts => {
         let accumulator = ""
         
