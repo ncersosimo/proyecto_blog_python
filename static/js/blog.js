@@ -52,3 +52,13 @@ fetch(`${url}/${username}`)
         section.innerHTML = accumulator;
     })
 
+    document.querySelector("#borrarpublicaciones").onclick = async () => {
+        const url = document.querySelector("#borrarpublicaciones").getAttribute("path");
+        
+        fetch(`${url}/${username}`, {
+            method: 'DELETE',
+        })
+        .then(response => window.location.reload(true))
+        .catch(error => console.error('Error:', error))
+    }
+
